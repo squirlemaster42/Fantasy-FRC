@@ -1,0 +1,8 @@
+package com.onion.requests;
+
+public enum ResponseType {
+    LOGINCONFIRMATIONRESPONSE,
+    SCORERESPONSE,
+    PICKCONFIRMATIONRESPONSE,
+    SCOREUSERRESPONSE
+}

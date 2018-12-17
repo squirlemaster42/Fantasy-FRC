@@ -1,0 +1,14 @@
+*.iml
+.idea/
+*/target/
+*/bin/
+*.DS_Store
+*.project
+*.settings/
+*rebel.xml
+*.classpath
+/target/
+vaadin-spreadsheet/errors
+vaadin-spreadsheet-charts/errors
+*/styles.css
+*styles.css
