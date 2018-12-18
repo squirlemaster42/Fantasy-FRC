@@ -18,10 +18,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        DataRequest dataRequest = new DataRequest("10.12.67.173", 19965);
+        DataRequest dataRequest = new DataRequest("10.12.32.131", 19965);
         dataRequest.start();
 
         Handler.getInstance().setPrimaryStage(primaryStage);
+        Handler.getInstance().setServer(dataRequest);
 
         primaryStage.show();
 

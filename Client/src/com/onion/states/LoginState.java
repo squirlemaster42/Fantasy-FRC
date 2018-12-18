@@ -1,5 +1,7 @@
 package com.onion.states;
 
+import com.onion.dataRequests.LoginRequest;
+import com.onion.utils.Handler;
 import com.onion.utils.PasswordUtils;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -17,23 +19,22 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
 
+import java.io.IOException;
+
 public class LoginState implements State{
 
     private Scene scene;
 
-    private void login(String username, String password){
+    private void login(final String username, final String password){
         //TODO Encrypt password and handle login data
-        String usernameConst = "Nathan";
-        String passwordConst = "Nathan";
 
         String salt = PasswordUtils.getSalt(30);
         String mySecurePassword = PasswordUtils.generateSecurePassword(password, salt);
+
         try {
-            if(username.equals(usernameConst)){
-                StateManager.getInstance().setCurrentState("MainScreenState");
-            }
-        } catch (NotFound notFound) {
-            notFound.printStackTrace();
+            Handler.getInstance().getServer().sendRecieveData(new LoginRequest().makeRequest(username + " " + mySecurePassword));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

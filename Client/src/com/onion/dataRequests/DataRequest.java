@@ -9,13 +9,7 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.security.KeyStore;
 
 public class DataRequest implements Runnable{
@@ -88,18 +82,37 @@ public class DataRequest implements Runnable{
             writer.println();
             writer.flush();
 
-            String line = null;
-            while((line = reader.readLine()) != null){
-                System.out.println("Input : " + line);
-
-                if(line.trim().equals("HTTP/1.1 200\r\n")){
-                    break;
-                }
-            }
-            sslSocket.close();
+//            String line = null;
+//            while((line = reader.readLine()) != null){
+//                System.out.println("Input : " + line);
+//
+//                if(line.trim().equals("HTTP/1.1 200\r\n")){
+//                    break;
+//                }
+//            }
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void closerConnection(){
+        String line = null;
+        try {
+            while ((line = reader.readLine()) != null) {
+                System.out.println("Input : " + line);
+                if (line.trim().equals("HTTP/1.1 200\r\n")) {
+                    break;
+                }
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public String sendRecieveData(final String sendString) throws IOException {
+        System.out.println("Sending Data");
+        writer.println(sendString);
+        return reader.readLine();
     }
 
     public synchronized void start(){

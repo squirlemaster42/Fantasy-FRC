@@ -69,14 +69,25 @@ public class Server implements Runnable{
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(outputStream));
 
-                    String line = null;
-                    while((line = bufferedReader.readLine()) != null){
-                        System.out.println("Input : " + line);
+//                    String line = null;
+//                    while((line = bufferedReader.readLine()) != null){
+//                        System.out.println("Input : " + line);
+//
+//                        if(line.trim().isEmpty()){
+//                            break;
+//                        }
+//                    }
 
-                        if(line.trim().isEmpty()){
-                            break;
+                    String line = null;
+                    while(running){
+                        System.out.println("Checking");
+                        System.out.println(running);
+                        if((line = bufferedReader.readLine()) != null){
+                            System.out.println("Input : " + line);
                         }
                     }
+                    System.out.println("OH SHOOT WE OUT THE LOOP");
+                    System.out.println(running);
 
                     printWriter.print("HTTP/1.1 200\r\n");
                     printWriter.flush();
