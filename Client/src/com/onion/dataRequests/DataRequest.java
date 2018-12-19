@@ -64,53 +64,26 @@ public class DataRequest implements Runnable{
         SSLContext sslContext = this.createSSLContext();
 
         try{
-            SSLSocketFactory sslSocketFactory = null;
-            if (sslContext != null) {
-                sslSocketFactory = sslContext.getSocketFactory();
-            }
+            SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
 
-            SSLSocket sslSocket = null;
-            if (sslSocketFactory != null) {
-                sslSocket = (SSLSocket) sslSocketFactory.createSocket(this.host, this.port);
-            }
+            SSLSocket sslSocket = (SSLSocket) sslSocketFactory.createSocket(this.host, this.port);
 
             System.out.println("Client Started");
 
-            if (sslSocket != null) {
-                sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
-            }
-
-            if (sslSocket != null) {
-                sslSocket.startHandshake();
-            }
-            SSLSession sslSession = null;
-            if (sslSocket != null) {
-                sslSession = sslSocket.getSession();
-            }
+            sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
+            sslSocket.startHandshake();
+            SSLSession sslSession = sslSocket.getSession();
 
             System.out.println("SSLSession :");
-            if (sslSession != null) {
-                System.out.println("\tProtocol : " + sslSession.getProtocol());
-            }
-            if (sslSession != null) {
-                System.out.println("\tCipher suite : " + sslSession.getCipherSuite());
-            }
+            System.out.println("\tProtocol : " + sslSession.getProtocol());
+            System.out.println("\tCipher suite : " + sslSession.getCipherSuite());
 
-            InputStream inputStream = null;
-            if (sslSocket != null) {
-                inputStream = sslSocket.getInputStream();
-            }
-            OutputStream outputStream = null;
-            if (sslSocket != null) {
-                outputStream = sslSocket.getOutputStream();
-            }
+            InputStream inputStream = sslSocket.getInputStream();
+            OutputStream outputStream = sslSocket.getOutputStream();
 
-            if (inputStream != null) {
-                reader =  new BufferedReader(new InputStreamReader(inputStream));
-            }
-            if (outputStream != null) {
-                writer = new PrintWriter(new OutputStreamWriter(outputStream));
-            }
+            reader =  new BufferedReader(new InputStreamReader(inputStream));
+
+            writer = new PrintWriter(new OutputStreamWriter(outputStream));
 
             writer.println("Hello Server");
             writer.println();
@@ -145,7 +118,8 @@ public class DataRequest implements Runnable{
 
     public String sendRecieveData(final String sendString) throws IOException {
         System.out.println("Sending Data");
-        writer.println(sendString);
+        writer.println(sendString + "\n");
+        writer.flush();
         return reader.readLine();
     }
 

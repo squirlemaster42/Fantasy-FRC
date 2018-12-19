@@ -12,7 +12,7 @@ import org.omg.CosNaming.NamingContextPackage.NotFound;
 
 public class Main extends Application {
 
-    private static final String serverIP = "10.12.32.131";
+    private static final String serverIP = "localhost";
     private static final int serverPort = 19965;
 
     public static void main(String[] args){

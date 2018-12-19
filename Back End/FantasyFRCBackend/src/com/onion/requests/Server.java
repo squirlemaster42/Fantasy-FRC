@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.Socket;
 import java.security.KeyStore;
 
 public class Server implements Runnable{
@@ -70,82 +71,44 @@ public class Server implements Runnable{
             System.out.println("Server Started");
 
             while(running){
-                SSLSocket sslSocket = null;
-                if (sslServerSocket != null) {
-                    sslSocket = (SSLSocket) sslServerSocket.accept();
-                }
+                SSLSocket sslSocket = (SSLSocket) sslServerSocket.accept();
 
-                if (sslSocket != null) {
-                    sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
-                }
-                if (sslSocket != null) {
-                    sslSocket.startHandshake();
-                }
+                sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
+                sslSocket.startHandshake();
 
-                SSLSession sslSession = null;
-                if (sslSocket != null) {
-                    sslSession = sslSocket.getSession();
-                }
+                SSLSession sslSession = sslSocket.getSession();
 
                 System.out.println("SSLSession :");
-                if (sslSession != null) {
-                    System.out.println("\tProtocol : " + sslSession.getProtocol());
-                }
+                System.out.println("\tProtocol : " + sslSession.getProtocol());
 
-                if (sslSession != null) {
-                    System.out.println("Cipher suite : " + sslSession.getCipherSuite());
-                }
+                System.out.println("Cipher suite : " + sslSession.getCipherSuite());
 
-                InputStream inputStream = null;
-                if (sslSocket != null) {
-                    inputStream = sslSocket.getInputStream();
-                }
-                OutputStream outputStream = null;
-                if (sslSocket != null) {
-                    outputStream = sslSocket.getOutputStream();
-                }
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(sslSocket.getInputStream()));
+                PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(sslSocket.getOutputStream()));
 
-                BufferedReader bufferedReader = null;
-                if (inputStream != null) {
-                    bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                }
-
-                PrintWriter printWriter = null;
-                if (outputStream != null) {
-                    printWriter = new PrintWriter(new OutputStreamWriter(outputStream));
-                }
-
-//                    String line = null;
-//                    while((line = bufferedReader.readLine()) != null){
-//                        System.out.println("Input : " + line);
+//              String line = null;
+//              while((line = bufferedReader.readLine()) != null){
+//                   System.out.println("Input : " + line);
 //
-//                        if(line.trim().isEmpty()){
-//                            break;
-//                        }
-//                    }
+//                   if(line.trim().isEmpty()){
+//                       break;
+//                   }
+//              }
 
-                    //TODO Fix problem with server/client (https://stackoverflow.com/questions/18403208/server-socket-disconnects-and-stops-listening)
-                    String line;
-                    while(running){
-                        System.out.println("Checking");
-                        System.out.println(running);
-                        if (bufferedReader != null && (line = bufferedReader.readLine()) != null) {
-                            System.out.println("Input : " + line);
-                        }
+                // TODO Fix problem with server/client (https://stackoverflow.com/questions/18403208/server-socket-disconnects-and-stops-listening)
+                String line;
+                while(running) {
+                    System.out.println("Checking");
+                    line = bufferedReader.readLine();
+                    System.out.println("*" + line + "*");
+                    if (line != null) {
+                        System.out.println("Input : " + line);
                     }
-                    System.out.println("OH SHOOT WE OUT THE LOOP");
-                    System.out.println(running);
-
-                if (printWriter != null) {
-                    printWriter.print("HTTP/1.1 200\r\n");
-                }
-                if (printWriter != null) {
-                    printWriter.flush();
                 }
 
-                if (sslSocket != null) {
-                    sslSocket.close();
-                }
+                printWriter.print("HTTP/1.1 200\r\n");
+                printWriter.flush();
+                sslSocket.close();
             }
         }catch (IOException e){ //TODO Add more specific exception
             e.printStackTrace();
