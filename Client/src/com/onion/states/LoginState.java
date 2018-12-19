@@ -26,15 +26,27 @@ public class LoginState implements State{
     private Scene scene;
 
     private void login(final String username, final String password){
+        String response = "";
         //TODO Encrypt password and handle login data
 
         String salt = PasswordUtils.getSalt(30);
         String mySecurePassword = PasswordUtils.generateSecurePassword(password, salt);
 
-        try {
-            Handler.getInstance().getServer().sendRecieveData(new LoginRequest().makeRequest(username + " " + mySecurePassword));
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(!username.equals("Break")){
+            try {
+                response = Handler.getInstance().getServer().sendRecieveData(new LoginRequest().makeRequest(username + " " + mySecurePassword));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //TODO Change to return msg
+        if(response.equals("")){
+            try {
+                StateManager.getInstance().setCurrentState("MainScreenState");
+            } catch (NotFound notFound) {
+                notFound.printStackTrace();
+            }
         }
     }
 

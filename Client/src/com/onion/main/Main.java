@@ -12,13 +12,16 @@ import org.omg.CosNaming.NamingContextPackage.NotFound;
 
 public class Main extends Application {
 
+    private static final String serverIP = "10.12.32.131";
+    private static final int serverPort = 19965;
+
     public static void main(String[] args){
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        DataRequest dataRequest = new DataRequest("10.12.32.131", 19965);
+    public void start(Stage primaryStage) {
+        DataRequest dataRequest = new DataRequest(serverIP, serverPort);
         dataRequest.start();
 
         Handler.getInstance().setPrimaryStage(primaryStage);

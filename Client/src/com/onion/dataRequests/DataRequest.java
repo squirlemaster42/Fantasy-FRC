@@ -9,7 +9,14 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.security.KeyStore;
 
 public class DataRequest implements Runnable{
@@ -38,7 +45,7 @@ public class DataRequest implements Runnable{
             keyManagerFactory.init(keyStore,"passphrase".toCharArray());
             KeyManager[] km = keyManagerFactory.getKeyManagers();
 
-            TrustManagerFactory trustManagerFactory = trustManagerFactory = TrustManagerFactory.getInstance("SunX509");
+            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance("SunX509");
             trustManagerFactory.init(keyStore);
             TrustManager[] tm = trustManagerFactory.getTrustManagers();
 
@@ -57,26 +64,53 @@ public class DataRequest implements Runnable{
         SSLContext sslContext = this.createSSLContext();
 
         try{
-            SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+            SSLSocketFactory sslSocketFactory = null;
+            if (sslContext != null) {
+                sslSocketFactory = sslContext.getSocketFactory();
+            }
 
-            SSLSocket sslSocket = (SSLSocket) sslSocketFactory.createSocket(this.host, this.port);
+            SSLSocket sslSocket = null;
+            if (sslSocketFactory != null) {
+                sslSocket = (SSLSocket) sslSocketFactory.createSocket(this.host, this.port);
+            }
 
             System.out.println("Client Started");
 
-            sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
+            if (sslSocket != null) {
+                sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
+            }
 
-            sslSocket.startHandshake();
-            SSLSession sslSession = sslSocket.getSession();
+            if (sslSocket != null) {
+                sslSocket.startHandshake();
+            }
+            SSLSession sslSession = null;
+            if (sslSocket != null) {
+                sslSession = sslSocket.getSession();
+            }
 
             System.out.println("SSLSession :");
-            System.out.println("\tProtocol : " + sslSession.getProtocol());
-            System.out.println("\tCipher suite : " + sslSession.getCipherSuite());
+            if (sslSession != null) {
+                System.out.println("\tProtocol : " + sslSession.getProtocol());
+            }
+            if (sslSession != null) {
+                System.out.println("\tCipher suite : " + sslSession.getCipherSuite());
+            }
 
-            InputStream inputStream = sslSocket.getInputStream();
-            OutputStream outputStream = sslSocket.getOutputStream();
+            InputStream inputStream = null;
+            if (sslSocket != null) {
+                inputStream = sslSocket.getInputStream();
+            }
+            OutputStream outputStream = null;
+            if (sslSocket != null) {
+                outputStream = sslSocket.getOutputStream();
+            }
 
-            reader =  new BufferedReader(new InputStreamReader(inputStream));
-            writer = new PrintWriter(new OutputStreamWriter(outputStream));
+            if (inputStream != null) {
+                reader =  new BufferedReader(new InputStreamReader(inputStream));
+            }
+            if (outputStream != null) {
+                writer = new PrintWriter(new OutputStreamWriter(outputStream));
+            }
 
             writer.println("Hello Server");
             writer.println();
@@ -96,7 +130,7 @@ public class DataRequest implements Runnable{
     }
 
     public void closerConnection(){
-        String line = null;
+        String line;
         try {
             while ((line = reader.readLine()) != null) {
                 System.out.println("Input : " + line);

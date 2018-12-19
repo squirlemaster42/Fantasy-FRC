@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bd15f17-a96a-4a9a-a61c-207e634ec191" name="Default" comment="" />
+    <list default="true" id="2bd15f17-a96a-4a9a-a61c-207e634ec191" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/onion/requests/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/onion/requests/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Client/mytestkey.jks" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/mytestkey.jks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Client/src/com/onion/dataRequests/DataRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/src/com/onion/dataRequests/DataRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Client/src/com/onion/states/LoginState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/src/com/onion/states/LoginState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Client/src/com/onion/states/MainScreenState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/src/com/onion/states/MainScreenState.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,43 +35,16 @@
     <expand />
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1169391701">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="237" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="237" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/onion/requests/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="88" column="67" selection-start-line="88" selection-start-column="67" selection-end-line="88" selection-end-column="67" />
+            <state relative-caret-position="493">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/onion/tests/ServerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="14" column="9" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="14" selection-end-column="9" />
+              <caret line="14" column="9" selection-start-line="9" selection-start-column="8" selection-end-line="14" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -80,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="306">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/onion/requests/KeyGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="119">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -159,9 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,6 +190,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,7 +283,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
@@ -349,17 +329,18 @@
       <workItem from="1544794461816" duration="1177000" />
       <workItem from="1544972521218" duration="2039000" />
       <workItem from="1545056300101" duration="1870000" />
+      <workItem from="1545192560409" duration="603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23127000" />
+    <option name="totallyTimeSpent" value="23730000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7262295" visible="true" weight="0.11488673" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7262295" visible="true" weight="0.116204694" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -374,11 +355,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.19601329" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19501625" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3290993" />
-      <window_info anchor="bottom" id="Duplicate detector" order="12" weight="0.3289689" />
+      <window_info anchor="bottom" id="Duplicate detector" order="12" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -395,9 +376,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="5" />
@@ -408,13 +386,7 @@
     </entry>
     <entry file="jar://C:/Program Files (x86)/BlueJ/jdk/src.zip!/java/io/BufferedReader.java" />
     <entry file="jar://C:/Program Files (x86)/BlueJ/jdk/src.zip!/java/net/URL.java" />
-    <entry file="jar://$PROJECT_DIR$/libs/okhttp-3.10.0.jar!/okhttp3/Request.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/okhttp-3.10.0.jar!/okhttp3/Request.class" />
     <entry file="file://$PROJECT_DIR$/src/com/onion/tests/RapeSpencer.java" />
     <entry file="file://$PROJECT_DIR$/src/com/onion/utils/HttpSendShit.java" />
     <entry file="file://$PROJECT_DIR$/src/com/onion/utils/HttpReqUtils.java">
@@ -530,30 +502,27 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/net/DualStackPlainSocketImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/onion/requests/KeyGenerator.java">
+    <entry file="jar://C:/Program Files (x86)/BlueJ/jdk/src.zip!/java/io/File.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/onion/requests/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="493">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/onion/tests/ServerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/BlueJ/jdk/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1756">
-          <caret line="275" column="31" lean-forward="true" selection-start-line="275" selection-start-column="31" selection-end-line="275" selection-end-column="31" />
+          <caret line="14" column="9" selection-start-line="9" selection-start-column="8" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="306">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -561,10 +530,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/requests/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/requests/KeyGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="88" column="67" selection-start-line="88" selection-start-column="67" selection-end-line="88" selection-end-column="67" />
+        <state relative-caret-position="119">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
