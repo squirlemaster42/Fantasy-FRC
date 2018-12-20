@@ -35,7 +35,7 @@ public class Server implements Runnable{
     private SSLContext createSSLContext(){ //TODO Add file name to constants and change
         try {
             KeyStore keyStore = KeyStore.getInstance("JKS");
-            keyStore.load(new FileInputStream("mytestkey.jks"), "passphrase".toCharArray()); //TODO Create key store
+            keyStore.load(new FileInputStream("mytestkey.jks"), "passphrase".toCharArray()); //TODO Change passphrase
 
             KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance("SunX509");
             keyManagerFactory.init(keyStore, "passphrase".toCharArray());
@@ -95,7 +95,6 @@ public class Server implements Runnable{
 //                   }
 //              }
 
-                // TODO Fix problem with server/client (https://stackoverflow.com/questions/18403208/server-socket-disconnects-and-stops-listening)
                 String line;
                 while(running) {
                     System.out.println("Checking");
@@ -110,7 +109,7 @@ public class Server implements Runnable{
                 printWriter.flush();
                 sslSocket.close();
             }
-        }catch (IOException e){ //TODO Add more specific exception
+        }catch (IOException e){
             e.printStackTrace();
         }
     }

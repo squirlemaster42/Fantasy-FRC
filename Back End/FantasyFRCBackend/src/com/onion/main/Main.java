@@ -6,8 +6,10 @@ import java.io.File;
 
 public class Main {
 
-    public static void main(String[] args){
+    //TODO Change from sending Strings to objects
+    //TODO Give clients IDs
 
+    public static void main(String[] args){
         File f = new File("mytestkey.jks");
         f.delete();
 

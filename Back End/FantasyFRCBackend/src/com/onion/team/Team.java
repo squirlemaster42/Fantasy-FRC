@@ -5,8 +5,6 @@ import java.util.Map;
 
 public class Team {
 
-    //TODO Add more methods
-
     private final String tbaID;
     private final Map<String, Integer> eventMap; //Event ID, Score
 
