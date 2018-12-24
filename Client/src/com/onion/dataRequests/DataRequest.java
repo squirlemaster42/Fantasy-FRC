@@ -85,7 +85,7 @@ public class DataRequest implements Runnable{
 
             writer = new PrintWriter(new OutputStreamWriter(outputStream));
 
-            writer.println("Hello Server");
+            writer.println(sslSocket.getLocalAddress().toString());
             writer.println();
             writer.flush();
 

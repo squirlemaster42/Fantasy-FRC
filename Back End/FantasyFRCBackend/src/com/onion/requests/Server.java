@@ -19,6 +19,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.security.KeyStore;
+import java.util.Collections;
 
 public class Server implements Runnable{
 
@@ -76,32 +77,20 @@ public class Server implements Runnable{
                 sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
                 sslSocket.startHandshake();
 
-                SSLSession sslSession = sslSocket.getSession();
-
-                System.out.println("SSLSession :");
-                System.out.println("\tProtocol : " + sslSession.getProtocol());
-
-                System.out.println("Cipher suite : " + sslSession.getCipherSuite());
+//                SSLSession sslSession = sslSocket.getSession();
+//                System.out.println("SSLSession :");
+//                System.out.println("\tProtocol : " + sslSession.getProtocol());
+//                System.out.println("Cipher suite : " + sslSession.getCipherSuite());
 
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(sslSocket.getInputStream()));
                 PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(sslSocket.getOutputStream()));
 
-//              String line = null;
-//              while((line = bufferedReader.readLine()) != null){
-//                   System.out.println("Input : " + line);
-//
-//                   if(line.trim().isEmpty()){
-//                       break;
-//                   }
-//              }
-
                 String line;
                 while(running) {
-                    System.out.println("Checking");
                     line = bufferedReader.readLine();
-                    System.out.println("*" + line + "*");
                     if (line != null) {
-                        System.out.println("Input : " + line);
+                        System.out.println("Input: " + line);
+                        String[] input = line.split(" ");
                     }
                 }
 
