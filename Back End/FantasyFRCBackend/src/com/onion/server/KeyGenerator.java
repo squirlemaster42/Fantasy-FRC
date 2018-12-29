@@ -1,4 +1,4 @@
-package com.onion.requests;
+package com.onion.server;
 
 import sun.security.tools.keytool.CertAndKeyGen;
 import sun.security.x509.X500Name;

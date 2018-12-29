@@ -1,8 +1,5 @@
 package com.onion.responses;
 
-import com.onion.requests.Response;
-import com.onion.requests.ResponseType;
-
 public class ScoreUserResponse implements Response {
 
     private final ResponseType responseType = ResponseType.SCOREUSERRESPONSE;

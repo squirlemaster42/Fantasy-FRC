@@ -1,4 +1,4 @@
-package com.onion.requests;
+package com.onion.responses;
 
 public enum ResponseType {
     LOGINCONFIRMATIONRESPONSE,

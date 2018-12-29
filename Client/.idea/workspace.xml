@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82c06028-6fcf-4ca2-8ee3-a30a4a14a563" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/client/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/client/ClientMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/RequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/RequestList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/tests/ClientHashTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/tests/ClientHashTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/utils/ClientUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/utils/ClientUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/client/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/client/ClientMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/KeyGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/KeyGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/ResponseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/ResponseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/requests/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/LoginConfirmationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/LoginConfirmationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/PickConfirmationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/PickConfirmationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/ScoreResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/ScoreResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/ScoreUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/responses/ScoreUserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/tests/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/tests/ServerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mytestkey.jks" beforeDir="false" afterPath="$PROJECT_DIR$/mytestkey.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="102">
               <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -48,11 +55,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="87" column="43" lean-forward="true" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+            <state relative-caret-position="-935">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/onion/states/LoginState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -92,17 +108,17 @@
         <option value="$PROJECT_DIR$/src/com/onion/dataRequests/Request.java" />
         <option value="$PROJECT_DIR$/src/com/onion/utils/Handler.java" />
         <option value="$PROJECT_DIR$/src/com/onion/dataRequests/LoginRequest.java" />
-        <option value="$PROJECT_DIR$/src/com/onion/states/LoginState.java" />
         <option value="$PROJECT_DIR$/src/com/onion/states/MainScreenState.java" />
         <option value="$PROJECT_DIR$/src/com/onion/main/Main.java" />
         <option value="$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java" />
+        <option value="$PROJECT_DIR$/src/com/onion/states/LoginState.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-967" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -110,6 +126,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,8 +185,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,11 +344,12 @@
       <workItem from="1545190072720" duration="1955000" />
       <workItem from="1545275918683" duration="1822000" />
       <workItem from="1545612333265" duration="3065000" />
+      <workItem from="1545695677937" duration="1925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38461000" />
+    <option name="totallyTimeSpent" value="40386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,9 +361,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-967" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7414075" visible="true" weight="0.18380743" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7414075" visible="true" weight="0.1301059" />
       <window_info id="Structure" order="1" sideWeight="0.25859246" side_tool="true" weight="0.1482602" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -355,12 +373,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2866521" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28641573" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3347779" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32822758" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.21276596" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32890365" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
@@ -443,27 +461,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/states/LoginState.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/utils/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="47" column="43" lean-forward="true" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+        <state relative-caret-position="476">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/utils/Handler.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/utils/PasswordUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="272">
+          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -481,17 +499,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/utils/PasswordUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        <state relative-caret-position="-935">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/states/LoginState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="87" column="43" lean-forward="true" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+        <state relative-caret-position="153">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
         </state>
       </provider>
     </entry>

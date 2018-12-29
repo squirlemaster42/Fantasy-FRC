@@ -1,6 +1,6 @@
 package com.onion.tests;
 
-import com.onion.requests.Server;
+import com.onion.server.Server;
 
 public class ServerTest {
 
