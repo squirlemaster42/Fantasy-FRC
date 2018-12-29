@@ -17,6 +17,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.*;
+import java.nio.channels.spi.SelectorProvider;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -24,21 +28,24 @@ import java.security.NoSuchAlgorithmException;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 
-public class Server implements Runnable{
+public class NIOServer implements Runnable{
 
     //TODO Try using tomcat
     //TODO Try out Heroku
 
     private final int port;
+    private final String ip;
     private Thread thread;
     private boolean running = false;
 
-    public Server(final int port) {
+    public NIOServer(final int port, final String ip) {
         this.port = port;
+        this.ip = ip;
 
         KeyGenerator.generateKeyFile(); //Generates key
     }
 
+    @SuppressWarnings("Duplicates")
     private SSLContext createSSLContext(){ //TODO Add file name to constants and change
         try {
             KeyStore keyStore = KeyStore.getInstance("JKS");
@@ -61,7 +68,10 @@ public class Server implements Runnable{
         return null;
     }
 
+    @SuppressWarnings("Duplicates")
     public void run(){ //TODO Figure out how to use NIO selectors
+
+        //Sets up SSL
         SSLContext sslContext = this.createSSLContext();
 
         try{
@@ -76,6 +86,14 @@ public class Server implements Runnable{
             }
 
             System.out.println("Server Started");
+
+            //Sets Up NIOSelector
+            Selector selector = Selector.open();
+            ServerSocketChannel serverSocket = ServerSocketChannel.open();
+            serverSocket.bind(new InetSocketAddress(ip, port));
+            serverSocket.configureBlocking(false);
+            serverSocket.register(selector, SelectionKey.OP_ACCEPT);
+            ByteBuffer buffer = ByteBuffer.allocate(256);
 
             while(running){
                 SSLSocket sslSocket = (SSLSocket) sslServerSocket.accept();
@@ -110,6 +128,7 @@ public class Server implements Runnable{
         }
     }
 
+    //Thread Methods
     public synchronized void start(){
         if(running){
             return;
