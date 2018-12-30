@@ -96,32 +96,7 @@ public class NIOServer implements Runnable{
             ByteBuffer buffer = ByteBuffer.allocate(256);
 
             while(running){
-                SSLSocket sslSocket = (SSLSocket) sslServerSocket.accept();
 
-                sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
-                sslSocket.startHandshake();
-
-                ClientHandler.getInstance().addClient(new Client(sslSocket.getLocalAddress().toString()));
-
-//                SSLSession sslSession = sslSocket.getSession();
-//                System.out.println("SSLSession :");
-//                System.out.println("\tProtocol : " + sslSession.getProtocol());
-//                System.out.println("Cipher suite : " + sslSession.getCipherSuite());
-
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(sslSocket.getInputStream()));
-                PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(sslSocket.getOutputStream()));
-
-                String line;
-                while(running) {
-                    line = bufferedReader.readLine();
-                    if (line != null) {
-                        System.out.println("Input: " + line);
-                    }
-                }
-
-                printWriter.print("HTTP/1.1 200\r\n");
-                printWriter.flush();
-                sslSocket.close();
             }
         }catch (IOException e){
             e.printStackTrace();
