@@ -11,6 +11,6 @@ public class LoginConfirmationResponse implements Response {
 
     @Override
     public String getResponse() {
-        return null;
+        return "Yo you gucci";
     }
 }

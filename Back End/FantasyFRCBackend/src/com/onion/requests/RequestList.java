@@ -5,9 +5,9 @@ import java.util.List;
 
 public class RequestList {
 
-    private RequestList instance;
+    private static RequestList instance;
 
-    public RequestList getInstance(){
+    public static RequestList getInstance(){
         if(instance == null){
             instance = new RequestList();
         }
