@@ -36,6 +36,7 @@ public class MainScreenState implements State{
         pane.getChildren().add(logoutBtn);
         pane.getChildren().add(draftBtn);
         this.scene = new Scene(pane, 1100, 800);
+        scene.getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
 
         logoutBtn.setOnAction(e -> {
             logout();

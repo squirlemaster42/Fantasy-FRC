@@ -64,7 +64,8 @@ public class LoginState implements State{
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         this.scene = new Scene(grid, 300, 275);
-
+        System.out.println(getClass().getResource("resources/theme.css"));
+        scene.getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
         //Title
         Text title = new Text("Welcome");
         title.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));

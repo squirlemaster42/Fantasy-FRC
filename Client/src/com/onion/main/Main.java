@@ -34,8 +34,10 @@ public class Main extends Application {
         MainScreenState mainScreenState = new MainScreenState();
         mainScreenState.createScene(Handler.getInstance().getPrimaryStage());
 
+
         StateManager.getInstance().addState("LoginState", loginState);
         StateManager.getInstance().addState("MainScreenState", mainScreenState);
+
         try {
             StateManager.getInstance().setCurrentState("LoginState");
         } catch (NotFound notFound) {
