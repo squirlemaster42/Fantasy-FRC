@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82c06028-6fcf-4ca2-8ee3-a30a4a14a563" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslPeer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/utils/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/onion/states/theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NIOServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/onion/client/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/onion/client/NioSslPeer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NIOServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/onion/client/NioSslClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslPeer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslPeer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Back End/FantasyFRCBackend/src/com/onion/server/NioSslServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytestkey.jks" beforeDir="false" afterPath="$PROJECT_DIR$/mytestkey.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/onion/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/onion/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/onion/states/LoginState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/onion/states/LoginState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/onion/states/MainScreenState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/onion/states/MainScreenState.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,44 +21,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="461">
+              <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/onion/client/NioSslClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="188" column="30" lean-forward="true" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/LoginRequest.java">
+        <entry file="file://$PROJECT_DIR$/src/com/onion/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+            <state relative-caret-position="272">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               <folding>
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#184#185#0" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#605#636#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/onion/states/MainScreenState.java">
+        <entry file="file://$PROJECT_DIR$/src/com/onion/client/NioSslPeer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="-2888">
+              <caret line="68" column="7" lean-forward="true" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,15 +80,16 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Singleton" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>clos</find>
+      <find>write</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,17 +110,22 @@
         <option value="$PROJECT_DIR$/src/com/onion/dataRequests/Request.java" />
         <option value="$PROJECT_DIR$/src/com/onion/utils/Handler.java" />
         <option value="$PROJECT_DIR$/src/com/onion/dataRequests/LoginRequest.java" />
-        <option value="$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java" />
         <option value="$PROJECT_DIR$/src/com/onion/main/Main.java" />
         <option value="$PROJECT_DIR$/src/com/onion/states/LoginState.java" />
         <option value="$PROJECT_DIR$/src/com/onion/states/MainScreenState.java" />
         <option value="$PROJECT_DIR$/src/com/onion/states/theme.css" />
+        <option value="$PROJECT_DIR$/src/com/onion/client/NioSslPeer.java" />
+        <option value="$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java" />
+        <option value="$PROJECT_DIR$/src/com/onion/client/Client.java" />
+        <option value="$PROJECT_DIR$/src/com/onion/client/NioSslClient.java" />
+        <option value="$PROJECT_DIR$/src/com/onion/test/NioServerTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="768" />
+    <option name="x" value="140" />
+    <option name="y" value="-15" />
+    <option name="width" value="769" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -132,6 +134,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,19 +193,22 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546609780545" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Back End/FantasyFRCBackend" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546955661220" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\Fantasy-FRC\Client" />
+      <recent name="G:\Fantasy FRC\Fantasy-FRC\Client\src\com\onion\client" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\Fantasy-FRC\Client" />
       <recent name="G:\Fantasy FRC\Fantasy-FRC\Client\src\com\onion\states" />
       <recent name="G:\Fantasy FRC\Fantasy-FRC\Client\src\com\onion\resources" />
       <recent name="G:\Fantasy FRC\Fantasy-FRC\Client\resources" />
@@ -220,21 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.onion.main.GUI" />
-      <module name="Client" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.onion.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.NioServerTest">
     <configuration name="GUITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.onion.test.GUITest" />
       <module name="Client" />
@@ -291,6 +283,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NioServerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.onion.test.NioServerTest" />
+      <module name="Client" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.onion.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -314,19 +320,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.GUI" />
       <item itemvalue="Application.GUITest" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.LoginState" />
       <item itemvalue="Application.MainScreenState" />
+      <item itemvalue="Application.NioServerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NioServerTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainScreenState" />
         <item itemvalue="Application.GUITest" />
         <item itemvalue="Application.LoginState" />
-        <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -363,11 +369,13 @@
       <workItem from="1546064167062" duration="508000" />
       <workItem from="1546065009273" duration="604000" />
       <workItem from="1546606207370" duration="1019000" />
+      <workItem from="1546951121490" duration="1442000" />
+      <workItem from="1546953413860" duration="1841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42517000" />
+    <option name="totallyTimeSpent" value="45800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,7 +389,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7414075" visible="true" weight="0.18078668" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7414075" visible="true" weight="0.18305598" />
       <window_info id="Structure" order="1" sideWeight="0.25859246" side_tool="true" weight="0.1482602" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -390,7 +398,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2852194" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1713881" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -488,17 +496,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/states/theme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="17">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/states/LoginState.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        <state relative-caret-position="561">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/onion/states/MainScreenState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -513,27 +531,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/states/MainScreenState.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/client/NioSslServer.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/onion/dataRequests/DataRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="461">
+          <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/states/LoginState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/onion/client/NioSslPeer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2888">
+          <caret line="68" column="7" lean-forward="true" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/onion/states/theme.css">
+    <entry file="file://$PROJECT_DIR$/src/com/onion/test/NioServerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        <state relative-caret-position="153">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/onion/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#605#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/onion/client/NioSslClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="188" column="30" lean-forward="true" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
         </state>
       </provider>
     </entry>

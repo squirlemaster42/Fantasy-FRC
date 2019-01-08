@@ -1,14 +1,4 @@
-package com.onion.server;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.BufferOverflowException;
-import java.nio.ByteBuffer;
-import java.nio.channels.SocketChannel;
-import java.security.KeyStore;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+package com.onion.client;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
@@ -20,6 +10,15 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.BufferOverflowException;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+import java.security.KeyStore;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * A class that represents an SSL/TLS peer, and can be extended to create a client or a server.
@@ -125,7 +124,7 @@ public abstract class NioSslPeer {
         peerNetData.clear();
 
         handshakeStatus = engine.getHandshakeStatus();
-        while (handshakeStatus != SSLEngineResult.HandshakeStatus.FINISHED && handshakeStatus != SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING) {
+        while (handshakeStatus != HandshakeStatus.FINISHED && handshakeStatus != HandshakeStatus.NOT_HANDSHAKING) {
             switch (handshakeStatus) {
             case NEED_UNWRAP:
                 if (socketChannel.read(peerNetData) < 0) {
@@ -158,16 +157,13 @@ public abstract class NioSslPeer {
                     break;
                 case BUFFER_OVERFLOW:
                     // Will occur when peerAppData's capacity is smaller than the data derived from peerNetData's unwrap.
-                    System.err.println("Overflow");
                     peerAppData = enlargeApplicationBuffer(engine, peerAppData);
                     break;
                 case BUFFER_UNDERFLOW:
                     // Will occur either when no data was read from the peer or when the peerNetData buffer was too small to hold all peer's data.
-                    System.err.println("Underflow");
                     peerNetData = handleBufferUnderflow(engine, peerNetData);
                     break;
                 case CLOSED:
-                    System.err.println("Closed");
                     if (engine.isOutboundDone()) {
                         return false;
                     } else {
@@ -340,7 +336,6 @@ public abstract class NioSslPeer {
         KeyStore keyStore = KeyStore.getInstance("JKS");
         InputStream keyStoreIS = new FileInputStream(filepath);
         try {
-            keyStore.load(keyStoreIS, keystorePassword.toCharArray());
             keyStore.load(keyStoreIS, keystorePassword.toCharArray());
         } finally {
             if (keyStoreIS != null) {

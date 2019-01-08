@@ -1,16 +1,11 @@
-package com.onion.server;
+package com.onion.client;
 
+import javax.net.ssl.*;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.security.SecureRandom;
-
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.SSLEngineResult;
-import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLSession;
 
 /**
  * An SSL/TLS client that connects to a server using its IP address and port.
@@ -60,7 +55,7 @@ public class NioSslClient extends NioSslPeer {
     	this.port = port;
 
         SSLContext context = SSLContext.getInstance(protocol);
-        context.init(createKeyManagers("./src/main/resources/client.jks", "storepass", "keypass"), createTrustManagers("./src/main/resources/trustedCerts.jks", "storepass"), new SecureRandom());
+        context.init(createKeyManagers("client.jks", "storepass", "keypass"), createTrustManagers("trustedCerts.jks", "storepass"), new SecureRandom());
         engine = context.createSSLEngine(remoteAddress, port);
         engine.setUseClientMode(true);
 
@@ -183,7 +178,7 @@ public class NioSslClient extends NioSslPeer {
                     switch (result.getStatus()) {
                     case OK:
                         peerAppData.flip();
-                        System.out.println("Server response: " + new String(peerAppData.array()));
+                        System.out.println("Server response: " + new String(peerAppData.array())); //TODO Send to method to handle
                         exitReadLoop = true;
                         break;
                     case BUFFER_OVERFLOW:

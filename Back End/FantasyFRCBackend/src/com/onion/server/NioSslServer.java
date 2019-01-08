@@ -61,7 +61,7 @@ public class NioSslServer extends NioSslPeer {
     public NioSslServer(String protocol, String hostAddress, int port) throws Exception {
 
         context = SSLContext.getInstance(protocol);
-        context.init(createKeyManagers("./src/main/resources/server.jks", "storepass", "keypass"), createTrustManagers("./src/main/resources/trustedCerts.jks", "storepass"), new SecureRandom());
+        context.init(createKeyManagers("server.jks", "storepass", "keypass"), createTrustManagers("trustedCerts.jks", "storepass"), new SecureRandom());
 
         SSLSession dummySession = context.createSSLEngine().getSession();
         myAppData = ByteBuffer.allocate(dummySession.getApplicationBufferSize());
@@ -145,6 +145,7 @@ public class NioSslServer extends NioSslPeer {
 
         if (doHandshake(socketChannel, engine)) {
             socketChannel.register(selector, SelectionKey.OP_READ, engine);
+            System.out.println("Handshake Complete");
         } else {
             socketChannel.close();
             System.out.println("Connection closed due to handshake failure.");
@@ -172,10 +173,11 @@ public class NioSslServer extends NioSslPeer {
             while (peerNetData.hasRemaining()) {
                 peerAppData.clear();
                 SSLEngineResult result = engine.unwrap(peerNetData, peerAppData);
+                System.out.println(result.getStatus());
                 switch (result.getStatus()) {
                 case OK:
                     peerAppData.flip();
-                    System.out.println("Incoming message: " + new String(peerAppData.array()));
+                    System.out.println("Incoming message: " + new String(peerAppData.array())); //TODO Send to be handled
                     break;
                 case BUFFER_OVERFLOW:
                     peerAppData = enlargeApplicationBuffer(engine, peerAppData);
@@ -193,7 +195,7 @@ public class NioSslServer extends NioSslPeer {
                 }
             }
 
-            write(socketChannel, engine, "Hello! I am your server!");
+            write(socketChannel, engine, "Hello! I am your server!"); //TODO remove?
 
         } else if (bytesRead < 0) {
             System.out.println("Received end of stream. Will try to close connection with client...");
