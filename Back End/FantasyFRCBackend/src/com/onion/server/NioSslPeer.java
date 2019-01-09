@@ -341,7 +341,6 @@ public abstract class NioSslPeer {
         InputStream keyStoreIS = new FileInputStream(filepath);
         try {
             keyStore.load(keyStoreIS, keystorePassword.toCharArray());
-            keyStore.load(keyStoreIS, keystorePassword.toCharArray());
         } finally {
             if (keyStoreIS != null) {
                 keyStoreIS.close();
