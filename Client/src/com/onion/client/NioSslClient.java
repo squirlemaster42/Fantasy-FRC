@@ -111,11 +111,12 @@ public class NioSslClient extends NioSslPeer {
         myAppData.clear();
         myAppData.put(message.getBytes());
         myAppData.flip();
-        while (myAppData.hasRemaining()) {
+        A: while (myAppData.hasRemaining()) {
             // The loop has a meaning for (outgoing) messages larger than 16KB.
             // Every wrap call will remove 16KB from the original message and send it to the remote peer.
             myNetData.clear();
             SSLEngineResult result = engine.wrap(myAppData, myNetData);
+            System.out.println(result.getStatus());
             switch (result.getStatus()) {
             case OK:
                 myNetData.flip();
@@ -123,7 +124,7 @@ public class NioSslClient extends NioSslPeer {
                     socketChannel.write(myNetData);
                 }
                 System.out.println("Message sent to the server: " + message);
-                break;
+                break A;
             case BUFFER_OVERFLOW:
                 myNetData = enlargePacketBuffer(engine, myNetData);
                 break;

@@ -126,6 +126,7 @@ public abstract class NioSslPeer {
 
         handshakeStatus = engine.getHandshakeStatus();
         while (handshakeStatus != SSLEngineResult.HandshakeStatus.FINISHED && handshakeStatus != SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING) {
+            System.out.println(handshakeStatus);
             switch (handshakeStatus) {
             case NEED_UNWRAP:
                 if (socketChannel.read(peerNetData) < 0) {
@@ -158,16 +159,13 @@ public abstract class NioSslPeer {
                     break;
                 case BUFFER_OVERFLOW:
                     // Will occur when peerAppData's capacity is smaller than the data derived from peerNetData's unwrap.
-                    System.err.println("Overflow");
                     peerAppData = enlargeApplicationBuffer(engine, peerAppData);
                     break;
                 case BUFFER_UNDERFLOW:
                     // Will occur either when no data was read from the peer or when the peerNetData buffer was too small to hold all peer's data.
-                    System.err.println("Underflow");
                     peerNetData = handleBufferUnderflow(engine, peerNetData);
                     break;
                 case CLOSED:
-                    System.err.println("Closed");
                     if (engine.isOutboundDone()) {
                         return false;
                     } else {
