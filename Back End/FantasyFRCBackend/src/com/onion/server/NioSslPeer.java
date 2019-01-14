@@ -126,7 +126,6 @@ public abstract class NioSslPeer {
 
         handshakeStatus = engine.getHandshakeStatus();
         while (handshakeStatus != SSLEngineResult.HandshakeStatus.FINISHED && handshakeStatus != SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING) {
-            System.out.println(handshakeStatus);
             switch (handshakeStatus) {
             case NEED_UNWRAP:
                 if (socketChannel.read(peerNetData) < 0) {

@@ -50,27 +50,26 @@ public class MainScreenState implements State{
         scene.getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
 
         logoutBtn.setOnAction(e -> {
+            logout();
 
-            try {
-                StateManager.getInstance().setCurrentState("LoginState");
-            } catch (NotFound notFound) {
-                notFound.printStackTrace();
-            }
 
         });
-     /*   draftBtn.setOnAction(e -> {
 
-            try {
+       draftBtn.setOnAction(e -> {
 
-            } catch (NotFound notFound) {
-                notFound.printStackTrace();
-            }
+           JoinPopup.display();
 
-        });
-     */
+       });
+
+
     }
 
     private void logout(){
+        try {
+            StateManager.getInstance().setCurrentState("LoginState");
+        } catch (NotFound notFound) {
+            notFound.printStackTrace();
+        }
 
     }
 }

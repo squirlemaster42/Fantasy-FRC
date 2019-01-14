@@ -22,6 +22,9 @@ public class NIOServer implements Runnable{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        while(running){
+
+        }
     }
 
     public NioSslServer getServer(){
