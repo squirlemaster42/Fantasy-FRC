@@ -20,7 +20,7 @@ public class ClientHandler{
         this.clientMap = new HashMap<>();
     }
 
-    public void addClient(final Client client){
+    public void registerClient(final Client client){
         clientMap.put(client.getId(), client);
     }
 

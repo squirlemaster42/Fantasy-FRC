@@ -16,7 +16,7 @@ public class JoinPopup {
 
         popupwindow.initModality(Modality.APPLICATION_MODAL);
         popupwindow.setTitle("Join Draft");
-       // popupwindow.getStylesheets().add(JoinPopup.class.getResource("theme.css").toExternalForm());
+        //popupwindow.getStylesheets().add(JoinPopup.class.getResource("theme.css").toExternalForm());
 
 
         Label label1= new Label("Join");
