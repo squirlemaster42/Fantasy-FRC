@@ -83,7 +83,7 @@ public class Server implements Runnable{
                 sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
                 sslSocket.startHandshake();
 
-                ClientHandler.getInstance().reqisterClient(new Client(sslSocket.getLocalAddress().toString()));
+                ClientHandler.getInstance().registerClient(new Client(sslSocket.getLocalAddress().toString()));
 
 //                SSLSession sslSession = sslSocket.getSession();
 //                System.out.println("SSLSession :");

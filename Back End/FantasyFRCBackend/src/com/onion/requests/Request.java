@@ -10,7 +10,7 @@ public abstract class Request{
 
     //TODO Determine if String is the best return
     //Used to construct what is returned to client
-    public abstract String handleRequest(final String input);
+    public abstract String handleRequest(final String[] input);
 
     public String getRequestID(){
         return requestID;

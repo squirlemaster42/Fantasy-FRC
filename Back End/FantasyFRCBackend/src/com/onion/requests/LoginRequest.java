@@ -10,10 +10,10 @@ public class LoginRequest extends Request{
 
     //TODO Handle input
     @Override
-    public String handleRequest(final String input) {
+    public String handleRequest(final String[] input) {
         String user = "NATE";
         String pass = "MARKS";
-        if(input.split(",")[0].equals(user) && input.split(",")[1].equals(pass)){
+        if(input[0].equals(user) && input[1].equals(pass)){
             LoginConfirmationResponse r = new LoginConfirmationResponse();
             return r.getResponse();
         }

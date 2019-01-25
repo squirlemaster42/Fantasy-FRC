@@ -1,6 +1,7 @@
 package com.onion.main;
 
 import com.onion.dataRequests.DataRequest;
+import com.onion.states.DraftScreenState;
 import com.onion.states.LoginState;
 import com.onion.states.MainScreenState;
 import com.onion.states.StateManager;
@@ -33,10 +34,13 @@ public class Main extends Application {
         loginState.createScene(Handler.getInstance().getPrimaryStage());
         MainScreenState mainScreenState = new MainScreenState();
         mainScreenState.createScene(Handler.getInstance().getPrimaryStage());
+        DraftScreenState draftScreenState = new DraftScreenState();
+        draftScreenState.createScene(Handler.getInstance().getPrimaryStage());
 
 
         StateManager.getInstance().addState("LoginState", loginState);
         StateManager.getInstance().addState("MainScreenState", mainScreenState);
+        StateManager.getInstance().addState("DraftScreenState", draftScreenState);
 
         try {
             StateManager.getInstance().setCurrentState("LoginState");

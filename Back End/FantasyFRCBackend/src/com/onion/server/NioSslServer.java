@@ -1,5 +1,9 @@
 package com.onion.server;
 
+import com.onion.client.ClientHandler;
+import com.onion.requests.Request;
+import com.onion.requests.RequestList;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -178,6 +182,15 @@ public class NioSslServer extends NioSslPeer {
                 case OK:
                     peerAppData.flip();
                     System.out.println("Incoming message: " + new String(peerAppData.array())); //TODO Send to be handled
+                    String[] splitMsg = new String(peerAppData.array()).split(" " );
+                    try {
+                        Request request = RequestList.getInstance().getRequest(splitMsg[0]).newInstance();
+                        request.handleRequest(splitMsg);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case BUFFER_OVERFLOW:
                     peerAppData = enlargeApplicationBuffer(engine, peerAppData);

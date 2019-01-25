@@ -5,16 +5,16 @@ import com.onion.client.ClientHandler;
 
 public class NewConnectionRequest extends Request {
 
-    private final Client c;
+    private Client c;
 
-    public NewConnectionRequest(final String ip){
-        super("Request New Connection"); //TODO Underscores instead of spaces?
-        c = new Client(ip);
+    public NewConnectionRequest(){
+        super("ConnectionRequest"); //TODO Underscores instead of spaces?
     }
 
-    public String handleRequest(String ip){
+    public String handleRequest(String[] input){
+         c = new Client(input[1]);
         ClientHandler.getInstance().registerClient(c);
-        return "Oh man we did it";
+        return "You good";
     }
 
 }

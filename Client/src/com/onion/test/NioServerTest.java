@@ -11,7 +11,7 @@ public class NioServerTest {
         try {
             InetAddress inetAddress = InetAddress.getLocalHost();
             Thread.sleep(500);
-            c.getClient().write("Request New Connection " + inetAddress.getHostAddress());
+            c.getClient().write("ConnectionRequest " + inetAddress.getHostAddress());
             c.getClient().read();
             c.getClient().shutdown();
         } catch (Exception e) {

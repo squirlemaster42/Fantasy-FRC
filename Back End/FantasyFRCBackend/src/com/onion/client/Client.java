@@ -15,4 +15,11 @@ public class Client{
     public int getId(){
         return this.id;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                '}';
+    }
 }
