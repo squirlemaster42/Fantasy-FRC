@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -33,11 +34,11 @@ public class LoginState implements State{
         String mySecurePassword = PasswordUtils.generateSecurePassword(password, salt);
 
         if(!username.equals("Break")){
-            try {
-                response = Handler.getInstance().getServer().sendRecieveData(new LoginRequest().makeRequest(username + " " + mySecurePassword));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                response = Handler.getInstance().getServer().sendRecieveData(new LoginRequest().makeRequest(username + " " + mySecurePassword));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
 
         //TODO Change to return msg

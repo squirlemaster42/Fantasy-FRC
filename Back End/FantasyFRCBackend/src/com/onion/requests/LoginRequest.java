@@ -5,7 +5,7 @@ import com.onion.responses.LoginConfirmationResponse;
 public class LoginRequest extends Request{
 
     public LoginRequest() {
-        super("Login");
+        super("Login:");
     }
 
     //TODO Handle input

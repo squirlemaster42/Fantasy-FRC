@@ -7,6 +7,8 @@ public class Client implements Runnable{
     private Thread thread;
     private boolean running = false;
 
+    private int id;
+
     public Client(final String ip, final int port){
         try {
             client = new NioSslClient("TLSv1.2", ip, port);
@@ -31,6 +33,14 @@ public class Client implements Runnable{
                 }
             }
         }
+    }
+
+    public void setID(final int id){
+        this.id = id;
+    }
+
+    public int getId(){
+        return id;
     }
 
     public NioSslClient getClient(){

@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -22,6 +23,7 @@ public class MainScreenState implements State{
 
     @Override
     public void createScene(final Stage primaryStage) {
+
         //Logout Button
         Button logoutBtn = new Button("Log Out");
         HBox hbLogoutBtn = new HBox(10);

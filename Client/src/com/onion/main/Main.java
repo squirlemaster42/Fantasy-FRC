@@ -8,6 +8,7 @@ import com.onion.states.StateManager;
 
 import com.onion.utils.Handler;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
 
@@ -25,8 +26,12 @@ public class Main extends Application {
         DataRequest dataRequest = new DataRequest(serverIP, serverPort);
         dataRequest.start();
 
+        Image image = new Image("Logo.png");
+        primaryStage.getIcons().add(image);
+
         Handler.getInstance().setPrimaryStage(primaryStage);
         Handler.getInstance().setServer(dataRequest);
+
 
         primaryStage.show();
 

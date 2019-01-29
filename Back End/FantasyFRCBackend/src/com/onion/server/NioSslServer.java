@@ -170,6 +170,8 @@ public class NioSslServer extends NioSslPeer {
 
         System.out.println("About to read from a client...");
 
+
+
         peerNetData.clear();
         int bytesRead = socketChannel.read(peerNetData);
         if (bytesRead > 0) {
@@ -186,6 +188,7 @@ public class NioSslServer extends NioSslPeer {
                     try {
                         Request request = RequestList.getInstance().getRequest(splitMsg[0]).newInstance();
                         request.handleRequest(splitMsg);
+                        String clientID = splitMsg[1];
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     } catch (InstantiationException e) {
@@ -202,6 +205,8 @@ public class NioSslServer extends NioSslPeer {
                     System.out.println("Client wants to close connection...");
                     closeConnection(socketChannel, engine);
                     System.out.println("Goodbye client!");
+                    System.out.println(clientID);
+                    //ClientHandler.getInstance().removeClient(Integer.parseInt(clientID));
                     return;
                 default:
                     throw new IllegalStateException("Invalid SSL status: " + result.getStatus());

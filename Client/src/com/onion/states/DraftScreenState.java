@@ -2,6 +2,7 @@ package com.onion.states;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -18,7 +19,6 @@ public class DraftScreenState implements State {
 
     @Override
     public void createScene(final Stage primaryStage) {
-
         //Go Back
         Button backBtn = new Button("Back");
         HBox hbbackBtn = new HBox(10);
