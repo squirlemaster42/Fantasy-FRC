@@ -24,6 +24,7 @@ public class MainScreenState implements State{
     @Override
     public void createScene(final Stage primaryStage) {
 
+        primaryStage.setTitle("Welcome!");
         //Logout Button
         Button logoutBtn = new Button("Log Out");
         HBox hbLogoutBtn = new HBox(10);

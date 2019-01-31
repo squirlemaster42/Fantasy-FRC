@@ -19,7 +19,8 @@ public class DraftScreenState implements State {
 
     @Override
     public void createScene(final Stage primaryStage) {
-        //Go Back
+        primaryStage.setTitle("My Drafts");
+
         Button backBtn = new Button("Back");
         HBox hbbackBtn = new HBox(10);
         backBtn.setLayoutX(1000.0);

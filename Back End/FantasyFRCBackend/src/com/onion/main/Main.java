@@ -18,7 +18,6 @@ public class Main {
 
         RequestList.getInstance().addRequest(LoginRequest.class);
 
-
         Server server = new Server(19965);
         server.start();
     }

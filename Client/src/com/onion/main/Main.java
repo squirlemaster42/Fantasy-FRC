@@ -26,12 +26,11 @@ public class Main extends Application {
         DataRequest dataRequest = new DataRequest(serverIP, serverPort);
         dataRequest.start();
 
-        Image image = new Image("Logo.png");
+        Image image = new Image("com/onion/states/Logo.png");
         primaryStage.getIcons().add(image);
 
         Handler.getInstance().setPrimaryStage(primaryStage);
         Handler.getInstance().setServer(dataRequest);
-
 
         primaryStage.show();
 

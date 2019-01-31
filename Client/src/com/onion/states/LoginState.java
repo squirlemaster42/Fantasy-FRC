@@ -58,6 +58,7 @@ public class LoginState implements State{
 
     @Override
     public void createScene(final Stage primaryStage) {
+        primaryStage.setTitle("Login");
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
@@ -100,6 +101,7 @@ public class LoginState implements State{
             actiontarget.setText("Incorrect Username or Password Entered");
             login(userTextField.getText(), pwBox.getText());
         });
+
     }
 }
 

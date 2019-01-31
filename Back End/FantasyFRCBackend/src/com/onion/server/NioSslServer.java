@@ -1,6 +1,5 @@
 package com.onion.server;
 
-import com.onion.client.ClientHandler;
 import com.onion.requests.Request;
 import com.onion.requests.RequestList;
 
@@ -189,9 +188,7 @@ public class NioSslServer extends NioSslPeer {
                         Request request = RequestList.getInstance().getRequest(splitMsg[0]).newInstance();
                         request.handleRequest(splitMsg);
                         String clientID = splitMsg[1];
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InstantiationException e) {
+                    } catch (IllegalAccessException | InstantiationException e) {
                         e.printStackTrace();
                     }
                     break;
@@ -205,7 +202,7 @@ public class NioSslServer extends NioSslPeer {
                     System.out.println("Client wants to close connection...");
                     closeConnection(socketChannel, engine);
                     System.out.println("Goodbye client!");
-                    System.out.println(clientID);
+                    //System.out.println(clientID);
                     //ClientHandler.getInstance().removeClient(Integer.parseInt(clientID));
                     return;
                 default:
@@ -225,7 +222,7 @@ public class NioSslServer extends NioSslPeer {
     /**
      * Will send a message back to a client.
      *
-     * @param key - the key dedicated to the socket channel that will be used to write to the client.
+     * @param socketChannel - the key dedicated to the socket channel that will be used to write to the client.
      * @param message - the message to be sent.
      * @throws IOException if an I/O error occurs to the socket channel.
      */
