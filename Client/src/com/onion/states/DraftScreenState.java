@@ -1,12 +1,17 @@
 package com.onion.states;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
+
+import java.awt.*;
 
 public class DraftScreenState implements State {
 
@@ -19,13 +24,15 @@ public class DraftScreenState implements State {
 
     @Override
     public void createScene(final Stage primaryStage) {
-        primaryStage.setTitle("My Drafts");
+
 
         Button backBtn = new Button("Back");
         HBox hbbackBtn = new HBox(10);
         backBtn.setLayoutX(1000.0);
         backBtn.setLayoutY(1.0);
         hbbackBtn.getChildren().add(backBtn);
+
+
 
 
         Pane pane = new Pane();

@@ -58,7 +58,7 @@ public class LoginState implements State{
 
     @Override
     public void createScene(final Stage primaryStage) {
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("Fantasy FRC");
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
