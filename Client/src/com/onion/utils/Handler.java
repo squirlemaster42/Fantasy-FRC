@@ -1,6 +1,6 @@
 package com.onion.utils;
 
-import com.onion.dataRequests.DataRequest;
+import com.onion.client.Client;
 import javafx.stage.Stage;
 
 public class Handler {
@@ -11,7 +11,7 @@ public class Handler {
     }
 
     private Stage primaryStage;
-    private DataRequest server;
+    private Client server;
 
     private Handler() {}
 
@@ -25,13 +25,13 @@ public class Handler {
         return this.primaryStage;
     }
 
-    public void setServer(final DataRequest server){
+    public void setServer(final Client server){
         if(this.server == null){
             this.server = server;
         }
     }
 
-    public DataRequest getServer(){
+    public Client getServer(){
         return this.server;
     }
 }

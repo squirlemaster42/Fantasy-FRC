@@ -3,26 +3,18 @@ package com.onion.server;
 import com.onion.client.Client;
 import com.onion.client.ClientHandler;
 
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLServerSocket;
-import javax.net.ssl.SSLServerSocketFactory;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import javax.net.ssl.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
+
+import static javax.print.attribute.standard.ReferenceUriSchemesSupported.FILE;
 
 public class Server implements Runnable{
 
@@ -41,6 +33,7 @@ public class Server implements Runnable{
 
     private SSLContext createSSLContext(){ //TODO Add file name to constants and change
         try {
+
             KeyStore keyStore = KeyStore.getInstance("JKS");
             keyStore.load(new FileInputStream("mytestkey.jks"), "passphrase".toCharArray()); //TODO Change passphrase and file name
 
@@ -83,9 +76,7 @@ public class Server implements Runnable{
                 sslSocket.setEnabledCipherSuites(sslSocket.getSupportedCipherSuites());
                 sslSocket.startHandshake();
 
-                ClientHandler.getInstance().registerClient(new Client(sslSocket.getLocalAddress().toString()));
-
-//                SSLSession sslSession = sslSocket.getSession();
+                SSLSession sslSession = sslSocket.getSession();
 //                System.out.println("SSLSession :");
 //                System.out.println("\tProtocol : " + sslSession.getProtocol());
 //                System.out.println("Cipher suite : " + sslSession.getCipherSuite());
@@ -93,17 +84,19 @@ public class Server implements Runnable{
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(sslSocket.getInputStream()));
                 PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(sslSocket.getOutputStream()));
 
-                String line;
-                while(running) {
-                    line = bufferedReader.readLine();
-                    if (line != null) {
-                        System.out.println("Input: " + line);
-                    }
-                }
+                ClientHandler.getInstance().registerClient(new Client(sslSocket.getLocalAddress().toString(), printWriter, bufferedReader));
 
-                printWriter.print("HTTP/1.1 200\r\n");
-                printWriter.flush();
-                sslSocket.close();
+//                String line;
+//                while(running) {
+//                    line = bufferedReader.readLine();
+//                    if (line != null) {
+//                        System.out.println("Input: " + line);
+//                    }
+//                }
+
+//                printWriter.print("HTTP/1.1 200\r\n");
+//                printWriter.flush();
+//                sslSocket.close();
             }
         }catch (IOException e){
             e.printStackTrace();

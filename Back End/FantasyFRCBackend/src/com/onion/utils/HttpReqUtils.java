@@ -9,7 +9,7 @@ import java.io.IOException;
 public class HttpReqUtils {
 
     //Makes HTTP request to TBA
-    public static Object makeRequest(final String reqURL) throws IOException {
+    public static String makeRequest(final String reqURL) throws IOException {
         //System.out.println(reqURL);
 
         //Creates request with given URL and adds header with TBAAuthKey
@@ -43,7 +43,7 @@ public class HttpReqUtils {
     //Used to make the request URL
     //Gets event list for a given team
     public static String makeEventListReq(final Team team){
-        return "https://www.thebluealliance.com/api/v3/team/" + team.getTBARequestID() + "/events/2018/keys";
+        return "https://www.thebluealliance.com/api/v3/team/" + team.getTBARequestID() + "/events/2019/keys";
     }
 
     //Used to make the request URL
@@ -51,7 +51,7 @@ public class HttpReqUtils {
     public static String makeMatchReq(final String matchID){
         return "https://www.thebluealliance.com/api/v3/match/" + matchID;
     }
-
+    
     //Used to make the request URL
     //Gets match list for team at given event
     public static String makeMatchListRequest(final Team team, final String eventID){
@@ -63,4 +63,18 @@ public class HttpReqUtils {
     public static String makeTeamEventStatusRequest(final Team team, final String eventID){
         return "https://www.thebluealliance.com/api/v3/team/" + team.getTBARequestID() + "/event/" + eventID + "/status";
     }
+
+    //TODO Change to use Team class
+    public static String makeTeamEventRequest(final String team, final String year){
+        return "https://www.thebluealliance.com/api/v3/team/" + team + "/events/" + year + "/keys";
+    }
+
+    public static String makeTeamEventAwardRequest(final String team, final String eventID){
+        return "https://www.thebluealliance.com/api/v3/team/" + team + "/event/" + eventID + "/awards";
+    }
+
+    public static String teamEventStatusRequest(final String team, final String eventID){
+        return "https://www.thebluealliance.com/api/v3/team/" + team + "/event/" + eventID + "/status";
+    }
+
 }

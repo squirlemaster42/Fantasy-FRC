@@ -11,9 +11,9 @@ public class BigData {
     private static BufferedWriter writer;
 
     public static void init(){
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream("data/Matches.bltcrispychickensandwichfromwendys"), "utf-8"))) {
-            ((BufferedWriter) writer).newLine();
+            writer.newLine();
         }catch(IOException e){
             e.printStackTrace();
         }

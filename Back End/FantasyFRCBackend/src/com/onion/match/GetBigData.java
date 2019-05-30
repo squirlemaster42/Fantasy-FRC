@@ -42,7 +42,7 @@ public class GetBigData implements Runnable {
     public void run() {
         Constants.getInstance().setTBAAuthKey("DthYAt40rXjLrvWZpxlnsFSvSDzPUjCtQ4deP8eJuy7sEpCmhxWITxqkhpTgi6Jf");
         try {
-            Object output = HttpReqUtils.makeRequest(HttpReqUtils.makeYearEventListReq(2018));
+            Object output = HttpReqUtils.makeRequest(HttpReqUtils.makeYearEventListReq(2019));
             String output2 = (String) output;
             output2 = output2.replaceAll("\"", "");
             output2 = output2.replaceAll("\\[", "");

@@ -1,5 +1,6 @@
 package com.onion.server;
 
+import com.onion.client.ClientHandler;
 import com.onion.requests.Request;
 import com.onion.requests.RequestList;
 
@@ -199,11 +200,10 @@ public class NioSslServer extends NioSslPeer {
                     peerNetData = handleBufferUnderflow(engine, peerNetData);
                     break;
                 case CLOSED:
+
                     System.out.println("Client wants to close connection...");
                     closeConnection(socketChannel, engine);
                     System.out.println("Goodbye client!");
-                    //System.out.println(clientID);
-                    //ClientHandler.getInstance().removeClient(Integer.parseInt(clientID));
                     return;
                 default:
                     throw new IllegalStateException("Invalid SSL status: " + result.getStatus());

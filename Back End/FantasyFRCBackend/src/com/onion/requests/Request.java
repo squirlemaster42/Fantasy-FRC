@@ -15,4 +15,9 @@ public abstract class Request{
     public String getRequestID(){
         return requestID;
     }
+
+    @Override
+    public String toString() {
+        return requestID;
+    }
 }

@@ -7,14 +7,19 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
 
+import java.util.ArrayList;
+
 public class MainScreenState implements State{
 
     private Scene scene;
+    private JoinPopup popup = new JoinPopup();
+    private ArrayList<Region> items = new ArrayList<>();
 
     @Override
     public void setScene(final Stage primaryStage) {
@@ -70,7 +75,8 @@ public class MainScreenState implements State{
 
        draftBtn.setOnAction(e -> {
 
-           JoinPopup.display();
+           popup.display();
+
 
        });
         draftlink.setOnAction(event -> {
@@ -93,4 +99,10 @@ public class MainScreenState implements State{
         }
 
     }
+    public Hyperlink addLink(String textField){
+        Hyperlink draftlinks = new Hyperlink(textField);
+        return draftlinks;
+
+    }
+
 }

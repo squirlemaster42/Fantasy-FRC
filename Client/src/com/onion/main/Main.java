@@ -1,6 +1,6 @@
 package com.onion.main;
 
-import com.onion.dataRequests.DataRequest;
+import com.onion.client.Client;
 import com.onion.states.DraftScreenState;
 import com.onion.states.LoginState;
 import com.onion.states.MainScreenState;
@@ -14,7 +14,7 @@ import org.omg.CosNaming.NamingContextPackage.NotFound;
 
 public class Main extends Application {
 
-    private static final String serverIP = "localhost";
+    private static final String serverIP = "10.12.69.39";
     private static final int serverPort = 19965;
 
     public static void main(String[] args){
@@ -23,7 +23,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        DataRequest dataRequest = new DataRequest(serverIP, serverPort);
+        Client dataRequest = new Client(serverIP, serverPort);
         dataRequest.start();
 
         Image image = new Image("com/onion/states/Logo.png");

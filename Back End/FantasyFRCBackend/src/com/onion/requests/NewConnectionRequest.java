@@ -10,8 +10,6 @@ public class NewConnectionRequest extends Request {
     }
 
     public String handleRequest(String[] input){
-        Client c = new Client(input[1]);
-        ClientHandler.getInstance().registerClient(c);
         return "You good";
     }
 

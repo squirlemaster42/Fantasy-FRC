@@ -21,12 +21,14 @@ public class RequestList {
     }
 
     public void addRequest(final Class<? extends Request> request){
+        System.out.println(request.getName() + " added.");
         requestList.add(request);
     }
 
     public Class<? extends Request> getRequest(final String requestID) throws IllegalAccessException, InstantiationException {
         for(Class<? extends Request> e: requestList){
             if(e.newInstance().getRequestID().equals(requestID)){
+                System.out.println(e.getName());
                 return e;
             }
         }

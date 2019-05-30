@@ -38,7 +38,7 @@ public class Scorer {
 
     public int scoreMatches(Team team){
         try {
-            Object output = HttpReqUtils.makeRequest(HttpReqUtils.makeTeamMatchListReq(team, 2018));
+            Object output = HttpReqUtils.makeRequest(HttpReqUtils.makeTeamMatchListReq(team, 2019));
             String output2 = (String) output;
             output2 = output2.replaceAll("\"", "");
             output2 = output2.replaceAll("\\[", "");
@@ -74,10 +74,10 @@ public class Scorer {
             String winner = m.winning_alliance;
             if (m.comp_level.equals("qm")) {
                 MatchResults results = m.score_breakdown.get("red");
-                if (results.autoQuestRankingPoint) {
+                if (results.habDockingRankingPoint) {
                     score += 1;
                 }
-                if (results.faceTheBossRankingPoint) {
+                if (results.completeRocketRankingPoint) {
                     score += 2;
                 }
             }
@@ -107,10 +107,10 @@ public class Scorer {
             String winner = m.winning_alliance;
             if (m.comp_level.equals("qm")) {
                 MatchResults results = m.score_breakdown.get("blue");
-                if (results.autoQuestRankingPoint) {
+                if (results.habDockingRankingPoint) {
                     score += 1;
                 }
-                if (results.faceTheBossRankingPoint) {
+                if (results.completeRocketRankingPoint) {
                     score += 2;
                 }
             }
@@ -173,10 +173,10 @@ public class Scorer {
             if (m.winning_alliance.equals(alliance)) {
                 score += 3;
             }
-            if (results.autoQuestRankingPoint) {
+            if (results.habDockingRankingPoint) {
                 score += 1;
             }
-            if (results.faceTheBossRankingPoint) {
+            if (results.completeRocketRankingPoint) {
                 score += 2;
             }
         }

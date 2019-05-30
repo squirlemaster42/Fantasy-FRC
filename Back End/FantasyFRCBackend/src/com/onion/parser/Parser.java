@@ -1,6 +1,7 @@
 package com.onion.parser;
 
 import com.onion.event.Team;
+import com.onion.scoring.Event;
 import com.onion.utils.Constants;
 import com.onion.match.Match;
 
@@ -35,13 +36,15 @@ public class Parser {
     }
 
     public static Match parseMatch(String JsonData) {
-        Match match = Constants.getInstance().getGson().fromJson(JsonData, Match.class);
-        return match;
+        return Constants.getInstance().getGson().fromJson(JsonData, Match.class);
     }
 
     //Parses JSon match status
     public static Team parseTeamStatus(String JsonData){
-        Team team = Constants.getInstance().getGson().fromJson(JsonData, Team.class);
-        return team;
+        return Constants.getInstance().getGson().fromJson(JsonData, Team.class);
+    }
+
+    public static Event parseTeamEventList(String JsonData){
+        return Constants.getInstance().getGson().fromJson(JsonData, Event.class);
     }
 }

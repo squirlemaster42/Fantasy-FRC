@@ -10,13 +10,12 @@ import javafx.stage.*;
 public class JoinPopup {
 
 
-    public static void display()
+    public void display()
     {
-        Stage popupwindow=new Stage();
+        Stage popupwindow =new Stage();
 
         popupwindow.initModality(Modality.APPLICATION_MODAL);
         popupwindow.setTitle("Join Draft");
-        //popupwindow.getStylesheets().add(JoinPopup.class.getResource("theme.css").toExternalForm());
 
 
         Label label1= new Label("Join");
@@ -27,7 +26,17 @@ public class JoinPopup {
         Button button1= new Button("Create Draft");
 
 
-        button1.setOnAction(e -> popupwindow.close());
+        button1.setOnAction(e -> {
+                    State state = StateManager.getInstance().getCurrentState();
+                    if (state instanceof MainScreenState){
+                        ((MainScreenState) (state)).addLink(keyTextField.getText());
+
+
+                    }
+                    popupwindow.close();
+
+                }
+        );
 
 
 
@@ -38,12 +47,15 @@ public class JoinPopup {
 
         layout.setAlignment(Pos.CENTER);
 
-        Scene scene1= new Scene(layout, 300, 250);
+        Scene scene= new Scene(layout, 300, 250);
+        scene.getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
 
-        popupwindow.setScene(scene1);
+
+        popupwindow.setScene(scene);
 
         popupwindow.showAndWait();
 
     }
+
 
 }

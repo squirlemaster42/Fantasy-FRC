@@ -1,6 +1,6 @@
 package com.onion.test;
 
-import com.onion.client.Client;
+import com.onion.client.NIOClient;
 import com.onion.dataRequests.LoginRequest;
 import com.onion.utils.GetNetworkAddress;
 
@@ -9,7 +9,7 @@ import java.net.InetAddress;
 public class NioServerTest {
 
     public static void main(String[] args){
-        Client c = new Client("10.12.68.20", 19672);
+        NIOClient c = new NIOClient("10.12.68.20", 19672);
         c.start();
         try {
             InetAddress inetAddress = InetAddress.getLocalHost();

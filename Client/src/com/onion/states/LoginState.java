@@ -22,6 +22,8 @@ import org.omg.CosNaming.NamingContextPackage.NotFound;
 
 import java.io.IOException;
 
+import static javafx.scene.paint.Color.WHITE;
+
 public class LoginState implements State{
 
     private Scene scene;
@@ -30,19 +32,19 @@ public class LoginState implements State{
         String response = "";
         //TODO Encrypt password and handle login data
 
-        String salt = PasswordUtils.getSalt(30);
-        String mySecurePassword = PasswordUtils.generateSecurePassword(password, salt);
+        //String salt = PasswordUtils.getSalt(30);
+        //String mySecurePassword = PasswordUtils.generateSecurePassword(password, salt);
 
         if(!username.equals("Break")){
-//            try {
-//                response = Handler.getInstance().getServer().sendRecieveData(new LoginRequest().makeRequest(username + " " + mySecurePassword));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+            try {
+                response = Handler.getInstance().getServer().sendRecieveData(new LoginRequest().makeRequest(username + " " + password, 1));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         //TODO Change to return msg
-        if(response.equals("")){
+        if(response.equals("LoginConfirmationResponse: true")){
             try {
                 StateManager.getInstance().setCurrentState("MainScreenState");
             } catch (NotFound notFound) {
@@ -71,16 +73,19 @@ public class LoginState implements State{
         //Title
         Text title = new Text("Welcome");
         title.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        title.setFill(WHITE);
         grid.add(title, 0, 0, 2, 1);
 
         //Username and Password Fields
         Label userName = new Label("User Name:");
+        userName.setTextFill(WHITE);
         grid.add(userName, 0, 1);
 
         TextField userTextField = new TextField();
         grid.add(userTextField, 1, 1);
 
         Label pw = new Label("Password:");
+        pw.setTextFill(WHITE);
         grid.add(pw, 0, 2);
 
         PasswordField pwBox = new PasswordField();

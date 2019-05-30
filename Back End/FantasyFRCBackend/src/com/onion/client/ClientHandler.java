@@ -23,6 +23,7 @@ public class ClientHandler{
     public void registerClient(final Client client){
         clientMap.put(client.getId(), client);
         System.out.println("We added a client: " + client.getId());
+        client.start();
     }
 
     public void removeClient(final int clientID){
